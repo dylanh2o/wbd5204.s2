@@ -1,18 +1,15 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-
-
+const dataWeather=[];
 export const fetchInfoweather = createAsyncThunk(
 	'home/fetchInfoweather',
 	async () => {
-
-//recuperer toutes les info des crypto
-		const request = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Geneva&appid=a89d6186113e2e58907bf91a553e6628', {
+		const request = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Geneva,CH&units=metric&lang=fr&appid=a89d6186113e2e58907bf91a553e6628', {
 			method: 'GET',
-
 		});
-
 		const data = await request.json();
-console.log(data);
+		console.log(data);
+		dataWeather.push(data);
+		return dataWeather;
 	});
 
 export const InfoSlice = createSlice({
@@ -20,7 +17,7 @@ export const InfoSlice = createSlice({
 	initialState: {
 		state: 'loading',
 		error: null,
-		currency: []
+		weather: []
 	},
 	reducers: {},
 	extraReducers: {
@@ -32,7 +29,7 @@ export const InfoSlice = createSlice({
 		[fetchInfoweather.fulfilled]: (state, action) => {
 			if (state.state === 'loading') {
 				state.state = 'ready';
-				state.currency = action.payload;
+				state.weather = action.payload;
 			}
 		},
 		[fetchInfoweather.rejected]: (state, action) => {
