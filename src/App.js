@@ -4,6 +4,7 @@ import store from './store';
 import {Provider,useDispatch} from 'react-redux';
 import 'antd/dist/antd.min.css';
 
+
 import {fetchInfoweather} from "./components/InfoSlice";
 const App = () => {
 	const dispatch = useDispatch();
@@ -19,7 +20,6 @@ const App = () => {
 	return loading ? 'Loading...' : (
 		<>
 			<div>
-			Hello
 				<InfoWeather/>
 			</div>
 

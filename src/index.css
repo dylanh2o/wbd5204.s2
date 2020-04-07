@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.container{
+
+  width:25vw;
+  height: 70vh;
+  color:white;
+  background-color: aqua;
+  background-image: url("img/background.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+.center{
+display: flex;
+  justify-content: center;
+align-items: center;
+  flex-direction: column;
+}
+.tempContainer{
+  text-align: center;
+}
+.temp{
+font-size: 30px;
+}
+.tempMinMax{
+  font-size: 15px;
+}
+.tempWeather{
+  text-align: center;
+ }
+
+.cityHours{
+  padding-top: 25vh;
+  text-align: left;
+}
