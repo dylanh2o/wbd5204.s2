@@ -44,6 +44,11 @@ font-size: 30px;
  }
 
 .cityHours{
-  padding-top: 25vh;
+  padding-top: 28vh;
   text-align: left;
+}
+
+
+.ModalConfig{
+float: right;
 }

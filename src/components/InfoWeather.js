@@ -1,6 +1,8 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import {EnvironmentOutlined,ClockCircleOutlined,SettingOutlined} from '@ant-design/icons';
+import {EnvironmentOutlined, ClockCircleOutlined} from '@ant-design/icons';
+import ModalConfig from './ModalConfig'
+
 const InfoWeather = () => {
 	const data = useSelector(state => state.weather.weather[0]);
 	var date = new Date();
@@ -21,11 +23,14 @@ const InfoWeather = () => {
 				</div>
 			</div>
 			<div className="cityHours">
-				<EnvironmentOutlined />{data.name}
+				<EnvironmentOutlined/>{data.name}
 				<br/>
-				<ClockCircleOutlined />{heureFormat}
+				<ClockCircleOutlined/>{heureFormat}
+				<div className="ModalConfig">
+					<ModalConfig/>
+				</div>
 			</div>
-			<SettingOutlined />
+
 		</div>
 	)
 };
